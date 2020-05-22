@@ -8,7 +8,7 @@ pipeline {
         stage('build') {
             
             	steps{
-            			sh 'mvn -f HelloWorld/pom.xml clean package'
+            			bat 'mvn -f HelloWorld/pom.xml clean package'
             		}
             }
             
@@ -19,8 +19,8 @@ pipeline {
 						usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) 
 						{
 
-							sh 'cf login -a http://api.run.pivotal.io -u $USERNAME -p $PASSSWORD'
-							sh 'cf push'
+							bat 'cf login -a http://api.run.pivotal.io -u $USERNAME -p $PASSSWORD'
+							bat 'cf push'
  						}
          
          			}
