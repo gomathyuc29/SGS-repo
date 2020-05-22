@@ -8,11 +8,7 @@ pipeline {
         stage('build') {
             
             	steps{
-            			sh 'mvn clean package'
-            			
-            			dir('HelloWorld'){
-            					def pom = readMavenPom file:'pom.xml'
-          				}
+            			sh 'mvn -f HelloWorld/pom.xml clean package'
             		}
             }
             
